@@ -1,7 +1,6 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from parlai.core.torch_agent import TorchAgent, Output
 from torch import optim
 import global_variables as gl
 
