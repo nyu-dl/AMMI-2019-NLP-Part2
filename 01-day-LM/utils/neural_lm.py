@@ -179,9 +179,10 @@ class seq2seq(nn.Module):
         """        
         if xs is None:
             return
-        xs = xs.to(self.device)
         bsz = xs.size(0)
         ys = torch.cat((xs[0, 1:].unsqueeze(0), torch.LongTensor([[gl.EOS_IDX]])), dim=1)
+
+        xs = xs.to(self.device)
         ys = ys.to(self.device)
     
         # just predict
