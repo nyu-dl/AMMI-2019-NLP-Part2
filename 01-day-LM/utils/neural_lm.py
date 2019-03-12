@@ -182,6 +182,7 @@ class seq2seq(nn.Module):
         xs = xs.to(self.device)
         bsz = xs.size(0)
         ys = torch.cat((xs[0, 1:].unsqueeze(0), torch.LongTensor([[gl.EOS_IDX]])), dim=1)
+        ys = ys.to(self.device)
     
         # just predict
         self.encoder.eval()
